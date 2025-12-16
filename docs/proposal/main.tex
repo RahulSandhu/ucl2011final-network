@@ -1,0 +1,190 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{kpfonts}
+\usepackage[
+  a4paper,
+  top=2.54cm,
+  bottom=2.54cm,
+  left=3.17cm,
+  right=3.17cm]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{array}
+
+% Define main color
+\definecolor{maincolor}{RGB}{144,41,42}
+
+% Hyperlink colors
+\renewcommand\UrlFont{\color{maincolor}\ttfamily}
+
+% Set page style to empty globally (no header or footer)
+\pagestyle{empty}
+
+% Set header and footer
+\setlength{\headheight}{30pt}
+\setlength{\headsep}{21pt}
+\setlength{\footskip}{30pt}
+
+% Title formatting
+\makeatletter
+
+% Redefine \bfseries to include main color
+\DeclareRobustCommand{\bfseries}{%
+	\not@math@alphabet\bfseries\mathbf%
+	\fontseries\bfdefault\selectfont%
+	\color{maincolor}%
+}%
+
+% Define title components
+\def\@maintitle{}
+\def\@subject{}
+\def\@subtitle{}
+\def\@authorname{}
+\def\@delivery{}
+
+% Commands to set title components
+\newcommand{\maintitle}[1]{\def\@maintitle{#1}}
+\newcommand{\subject}[1]{\def\@subject{#1}}
+\newcommand{\subtitle}[1]{\def\@subtitle{#1}}
+\newcommand{\authorname}[1]{\def\@authorname{#1}}
+\newcommand{\delivery}[1]{\def\@delivery{#1}}
+
+% Redefine \maketitle
+\renewcommand{\maketitle}{
+    \thispagestyle{empty}
+    \begin{flushright}
+        {\fontsize{28pt}{32pt}\selectfont \bfseries \color{maincolor} \@maintitle}\\[0.35cm]
+        {\fontsize{14pt}{16pt}\selectfont \bfseries \color{maincolor}
+        \textit{\@subtitle}}
+    \end{flushright}
+    \vspace{1cm}
+    {\noindent
+        \fontsize{12pt}{14pt}\selectfont
+        \setlength{\baselineskip}{14pt} 
+        \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{0.8\linewidth}}
+            \textbf{\textcolor{maincolor}{Subject:}}  & \@subject    \\[6pt]
+            \textbf{\textcolor{maincolor}{Authors:}}  & \@authorname \\[6pt] 
+            \textbf{\textcolor{maincolor}{Group:}} & T   \\
+            \textbf{\textcolor{maincolor}{Delivery:}} & \@delivery   \\
+        \end{tabular}
+    }
+    \vspace{0.5cm} \\
+    \noindent\textcolor{maincolor}{\rule{\textwidth}{2pt}}
+}
+\makeatother
+
+% Set title information
+\maintitle{A3 Project Proposal}
+\subtitle{Master in Health Data Science --- MHEDAS}
+\subject{Complex Networks}
+\authorname{Teferi Mekonnen Yitayew, Sofía González Estrada, Ravneet-Rahul Sandhu Singh}
+\delivery{December 14, 2025}
+
+% Paragraph formatting
+\setlength{\parindent}{0pt}
+\onehalfspacing
+
+\begin{document}
+
+\maketitle
+
+\vspace{10pt}
+
+\section*{Option 1:}
+
+\textbf{Title:} The Architecture of Guardiola’s Tiki-Taka: A Complex Network
+Analysis of the 2011 UCL Final
+
+\vspace{1em}
+
+\textbf{Description:} The 2011 Champions League Final between FC Barcelona and
+Manchester United is widely regarded as a masterpiece of tactical football,
+showcasing the pinnacle of Guardiola's tiki-taka philosophy. This project aims
+to study the match as a Complex Network by modeling player interactions as a
+directed graph, where nodes represent players and edges represent passes. We
+aim to quantify the structural properties that defined Guardiola’s dominance.
+We hypothesize that his system exhibited specific topological features: high
+clustering coefficients and robust small-world properties that distinguished it
+from the inefficient structure of Manchester United. Furthermore, we aim to
+analyze the specific role of Lionel Messi as a False Nine hub, whose
+positioning and passing patterns were crucial to unlocking defenses.
+
+\vspace{1em}
+
+\textbf{Data:} To conduct this analysis, we will utilize event data from the
+2011 Champions League Final, sourced from StatsBomb. This dataset provides
+event-level information, including pass locations, timestamps, and player
+identities.
+
+\vfill
+
+\hfill
+\begin{minipage}[b]{0.3\textwidth}
+	\includegraphics[width=\linewidth]{../../images/logos/mhedas_logo.png}
+\end{minipage}
+
+\cleardoublepage
+
+\section*{Option 2:}
+
+\textbf{Title:} Sophie's Complex World: A Network Analysis of Gaarder's
+Philosophical Novel
+
+\vspace{1em}
+
+\textbf{Description:} \textit{El Mundo de Sofía} (Sophie's World) is a novel
+written by Jostein Gaarder, who describes the history of philosophy through the
+narration of a teenage girl's life. We aim to describe the story from a complex
+network perspective, representing each character as a node, with edges between
+them defined if two characters are mentioned within a predefined word window.
+By analyzing the network, we would try to describe communities formed by
+different philosophers. We also want to identify important individuals, like
+Alberto Knox, who acts as the guide throughout the story.
+
+\vspace{1em}
+
+\textbf{Data:} To conduct this analysis, we will utilize the full digital text
+of \textit{El Mundo de Sofía} in plain text format. We will employ Natural
+Language Processing (NLP) techniques to extract entity interactions and build
+the adjacency matrix for the network analysis.
+
+\section*{Option 3:}
+
+\textbf{Title:} Mapping the Multiverse: Community Detection in the Marvel
+Social Network
+
+\vspace{1em}
+
+\textbf{Description:} The Marvel Universe consists of a vast interconnected
+Multiverse of narratives consisting of over 8,000 characters and decades of
+crossovers. The idea would be about analyzing this vast lore as a social
+collaboration network. We will construct a graph where nodes represent
+characters and edges are defined by co-occurrence in the same comic. Our goal
+is to map the topology of this Multiverse using Centrality Measures (Degree and
+Betweenness) to determine if icons like Captain America are truly the
+structural hubs (like in the movies), or if characters act as the primary
+bridges between different storylines (e.g., connecting the Avengers cluster to
+the X-Men cluster). We will use Community Detection algorithms to see if the
+structure of the graph naturally reproduces the teams without prior knowledge
+of the lore.
+
+\vspace{1em}
+
+\textbf{Data:} We will utilize the open-source Marvel Universe Social Network
+dataset, which maps character appearances across decades of publications.
+
+\vfill
+
+\hfill
+\begin{minipage}[b]{0.3\textwidth}
+	\includegraphics[width=\linewidth]{../../images/logos/mhedas_logo.png}
+\end{minipage}
+
+\end{document}
