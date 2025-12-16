@@ -8,7 +8,7 @@ notebooks/.ipynb_checkpoints
 # Assets
 images/logos
 
-# Reports and presentation
+# Reports and documentation
 docs/proposal/*
 presentation/*
 report/*
