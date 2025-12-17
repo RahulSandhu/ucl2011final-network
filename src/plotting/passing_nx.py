@@ -156,15 +156,17 @@ def get_network_data(df, team, start_min, end_min):
 def create_team_figure(team_name, time_windows, node_color, edge_color, title_main):
     # Create subplot
     fig, axes = plt.subplots(
-        2, 2, figsize=(14, 14)
-    )  # Increased from (10, 10) for more space
+        2,
+        2,
+        figsize=(14, 14),
+    )
     axes = axes.flatten()
 
-    # Overall figure settings - WHITE BACKGROUND
+    # Overall figure settings
     fig.set_facecolor("white")
     fig.suptitle(title_main, fontsize=24, color="black", weight="bold", y=0.97)
 
-    # Add StatsBomb credit - BLACK TEXT
+    # Add StatsBomb credit
     fig.text(
         0.5,
         0.92,
@@ -256,8 +258,8 @@ def create_team_figure(team_name, time_windows, node_color, edge_color, title_ma
         right=0.98,
         top=0.85,
         bottom=0.02,
-        wspace=0.08,  # Increased horizontal spacing to prevent label overlap
-        hspace=0.30,  # Increased vertical spacing for more room
+        wspace=0.08,
+        hspace=0.30,
     )
     os.makedirs("../../images/network_visualization", exist_ok=True)
     plt.savefig(
