@@ -32,6 +32,7 @@ kiwisolver==1.4.9
 matplotlib==3.10.7
 matplotlib-inline==0.2.1
 more-itertools==10.8.0
+mplsoccer==1.6.1
 msgpack==1.1.2
 networkx==3.6
 nftables==0.1
@@ -67,6 +68,7 @@ Reflector==2023.6.28.0.36.1
 requests==2.32.5
 requests-cache==1.2.1
 scipy==1.16.3
+seaborn==0.13.2
 setuptools==80.9.0
 shtab==1.8.0
 six==1.17.0
@@ -78,8 +80,6 @@ traitlets==5.14.3
 typeguard==4.4.4
 typing_extensions==4.15.0
 tzdata==2025.2
-# Editable Git install with no remote (ucl2011-network==0.1.0)
--e /home/rahul/desktop/studies/health_data_science/2nd_year/q3/complex_networks/assessments/a03_complex_networks_project
 ufw==0.36.2
 url-normalize==2.2.1
 urllib3==2.6.0
