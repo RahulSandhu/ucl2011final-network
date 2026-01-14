@@ -8,14 +8,14 @@ import pandas as pd
 from config import DATA_DIR, PLAYER_IMAGE_PATHS, PLAYER_NAME_MAP, RESULTS_DIR
 from infomap import Infomap
 from matplotlib.offsetbox import AnnotationBbox, OffsetImage
+from utils.node_icons import create_circular_image
+from utils.pitch import draw_pitch
+
 from network_construction import (
     build_directed_weighted_graph,
     get_network_data,
     load_data,
 )
-
-from utils.node_icons import create_circular_image
-from utils.pitch import draw_pitch
 
 
 # Convert directed graph to undirected with weight summing
@@ -403,6 +403,7 @@ def analyze_community_efficiency(team_name, node_community):
     return pd.DataFrame(results)
 
 
+# Main execution
 if __name__ == "__main__":
     # Load data
     df = load_data()
